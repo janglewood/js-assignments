@@ -33,7 +33,17 @@
  *
  */
 function* get99BottlesOfBeer() {
-    throw new Error('Not implemented');
+    let bootles = 99;
+    while(bootles > 2) {
+        yield `${bootles} bottles of beer on the wall, ${bootles} bottles of beer.`
+        yield `Take one down and pass it around, ${--bootles} bottles of beer on the wall.`;
+    }
+        yield `${bootles} bottles of beer on the wall, ${bootles} bottles of beer.`
+        yield `Take one down and pass it around, ${--bootles} bottle of beer on the wall.`;
+        yield `${bootles} bottle of beer on the wall, ${bootles} bottle of beer.`
+        yield `Take one down and pass it around, no more bottles of beer on the wall.`
+        yield `No more bottles of beer on the wall, no more bottles of beer.`
+        yield `Go to the store and buy some more, 99 bottles of beer on the wall.`
 }
 
 
@@ -47,7 +57,18 @@ function* get99BottlesOfBeer() {
  *
  */
 function* getFibonacciSequence() {
-    throw new Error('Not implemented');
+    var first = 0;
+    var second = 1;
+    while (true){
+        let current = first;
+        first = second;
+        second += current;
+        let reset = yield current;
+        if (reset){
+            first = 0;
+            second = 1;
+        }
+    }
 }
 
 

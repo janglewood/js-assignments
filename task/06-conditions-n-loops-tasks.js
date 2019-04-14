@@ -168,7 +168,8 @@ function doRectanglesOverlap(rect1, rect2) {
  *   
  */
 function isInsideCircle(circle, point) {
-    throw new Error('Not implemented');
+    let d = Math.sqrt(((point.x - circle.center.x) ** 2) + ((point.y - circle.center.y) ** 2));
+    return d < circle.radius;
 }
 
 
@@ -383,7 +384,10 @@ function isBracketsBalanced(str) {
  *
  */
 function timespanToHumanString(startDate, endDate) {
-    throw new Error('Not implemented');
+    //let diff = new Date(endDate - startDate);
+    let year = new Date(endDate).getFullYear() - new Date(startDate).getFullYear();
+
+
 }
 
 
@@ -452,7 +456,12 @@ function getCommonDirectoryPath(pathes) {
  *
  */
 function getMatrixProduct(m1, m2) {
-    throw new Error('Not implemented');
+    let arr = [];
+    for(let i = 0; i < m1.length; i++) {
+        for(let k = 0; k < m1[i]; k++) {
+            arr[i][k] = m1[i][k] * m2[k][i]
+        }
+    };
 }
 
 
